@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-ar" lang="es-ar" dir="ltr">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>PANACEA – Distribuidora Veterinaria Líder en Argentina</title>
+  <meta name="description" content="Panacea es la compañía líder en comercialización y distribución de productos específicos del canal veterinario en Argentina. Más de 30 años de trayectoria.">
+  <meta property="og:title" content="PANACEA – Distribuidora Veterinaria">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PANACEA">
+  <link rel="shortcut icon" href="../images/logos/panacea_logo_ico_2020.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    /* =====================
+       RESET & BASE
+    ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #444;
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Noto Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+    h1 { font-size: 40px; }
+    h2 { font-size: 33px; }
+    h3 { font-size: 27px; }
+    h4 { font-size: 23px; }
+    h5 { font-size: 20px; }
+    h6 { font-size: 16px; }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+
+    [class*="col-"] {
+      padding: 0 15px;
+    }
+
+    .col-12 { width: 100%; }
+    .col-6  { width: 50%; }
+    .col-4  { width: 33.3333%; }
+    .col-3  { width: 25%; }
+    .text-center { text-align: center; }
+    .text-left   { text-align: left; }
+    .text-right  { text-align: right; }
+    .text-justify { text-align: justify; }
+
+    /* =====================
+       TOP BAR
+    ===================== */
+    #sp-top-bar {
+      background: #f8f8f8;
+      color: #595959;
+      padding: 6px 0;
+      font-size: 13px;
+      border-bottom: 1px solid #eee;
+    }
+
+    #sp-top-bar .contact-info {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #sp-top-bar i {
+      color: #999;
+      margin-right: 4px;
+    }
+
+    /* =====================
+       HEADER / NAV
+    ===================== */
+    #sp-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      height: 90px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: height 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #sp-header.scrolled {
+      height: 65px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    #sp-header .container,
+    #sp-header .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    /* Logo */
+    .sp-logo img {
+      height: 55px;
+      width: auto;
+      transition: height 0.3s ease;
+      object-fit: contain;
+    }
+
+    #sp-header.scrolled .sp-logo img { height: 42px; }
+
+    /* Desktop Nav */
+    .sp-megamenu-parent {
+      display: flex;
+      list-style: none;
+      gap: 0;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .sp-megamenu-parent li a {
+      display: flex;
+      align-items: center;
+      height: 90px;
+      padding: 0 20px;
+      color: #444;
+      transition: color 0.25s ease;
+      white-space: nowrap;
+    }
+
+    #sp-header.scrolled .sp-megamenu-parent li a { height: 65px; }
+
+    .sp-megamenu-parent li a:hover,
+    .sp-megamenu-parent li.active a { color: #7063FF; }
+
+    /* Hamburger */
+    #hamburger-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: #444;
+      font-size: 22px;
+    }
+
+    /* Off-canvas menu */
+    #offcanvas-menu {
+      position: fixed;
+      top: 0; right: -280px;
+      width: 280px;
+      height: 100%;
+      background: #2c2c2c;
+      z-index: 2000;
+      transition: right 0.3s ease;
+      overflow-y: auto;
+      padding: 60px 0 30px;
+    }
+
+    #offcanvas-menu.open { right: 0; }
+
+    #offcanvas-close {
+      position: absolute;
+      top: 15px; right: 15px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    #offcanvas-menu ul {
+      list-style: none;
+      padding: 20px 0;
+    }
+
+    #offcanvas-menu ul li a {
+      display: block;
+      padding: 12px 25px;
+      color: #ccc;
+      font-size: 15px;
+      border-bottom: 1px solid #3a3a3a;
+      transition: color 0.2s;
+    }
+
+    #offcanvas-menu ul li a:hover { color: #fff; }
+
+    .offcanvas-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .offcanvas-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* Body offset for fixed header */
+    body { padding-top: 96px; }
+
+    /* =====================
+       PRELOADER
+    ===================== */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.4s ease;
+    }
+
+    #preloader.hidden { opacity: 0; pointer-events: none; }
+
+    #preloader img { height: 70px; margin-bottom: 20px; }
+
+    .preloader-bar {
+      width: 200px;
+      height: 3px;
+      background: #eee;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .preloader-bar::after {
+      content: '';
+      display: block;
+      width: 60%;
+      height: 100%;
+      background: #7063FF;
+      border-radius: 3px;
+      animation: load-anim 1.2s ease-in-out infinite alternate;
+    }
+
+    @keyframes load-anim {
+      from { margin-left: -60%; }
+      to   { margin-left: 100%; }
+    }
+
+    /* =====================
+       HERO SLIDER
+    ===================== */
+    #hero-slider {
+      position: relative;
+      overflow: hidden;
+      background: #000;
+      width: 100%;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.7s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      display: block;
+      max-height: 600px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Slider arrows */
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.25);
+      border: none;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.2s;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .slider-btn:hover { background: rgba(255,255,255,0.55); }
+    .slider-btn.prev { left: 20px; }
+    .slider-btn.next { right: 20px; }
+
+    /* Slider dots */
+    .slider-dots {
+      position: absolute;
+      bottom: 15px;
+      left: 50%; transform: translateX(-50%);
+      display: flex; gap: 8px;
+    }
+
+    .slider-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .slider-dot.active { background: #fff; }
+
+    /* =====================
+       SECTIONS GENERAL
+    ===================== */
+    .sppb-section {
+      padding: 60px 0;
+    }
+
+    /* Section title – "handwritten" style */
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h3 {
+      font-style: italic;
+      font-size: 27px;
+      color: #333;
+      display: inline-block;
+      position: relative;
+    }
+
+    .section-title h3::after {
+      content: '';
+      display: block;
+      width: 60%;
+      height: 2px;
+      background: #7063FF;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* =====================
+       QUIENES SOMOS
+    ===================== */
+    #quienes_somos_titulo { background: #fff; }
+
+    .quienes-text {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: justify;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .quienes-text strong { color: #333; }
+
+    /* Mission / Vision feature boxes */
+    .feature-boxes {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .feature-box {
+      flex: 1;
+      min-width: 280px;
+      text-align: center;
+      padding: 30px 25px;
+      border-radius: 6px;
+      background: #fafafa;
+      border: 1px solid #f0f0f0;
+    }
+
+    .feature-box .icon {
+      font-size: 36px;
+      color: #7063FF;
+      margin-bottom: 15px;
+    }
+
+    .feature-box h3 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .feature-box p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* =====================
+       DIFERENCIALES
+    ===================== */
+    #diferenciales {
+      background: #f8f8f8;
+      padding: 60px 0;
+    }
+
+    .diferencial-grid {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .diferencial-card {
+      flex: 1;
+      min-width: 260px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 30px 25px;
+      border: 1px solid #ececec;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .diferencial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    }
+
+    .diferencial-card h3 {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .diferencial-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* =====================
+       PANACEA MOBILE
+    ===================== */
+    #panacea_mobile {
+      background: #fff;
+      padding: 60px 0;
+    }
+
+    .mobile-layout {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .mobile-img { flex: 1; min-width: 260px; }
+
+    .mobile-img img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .mobile-content {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .mobile-content h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .store-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .store-badges a img {
+      width: 180px;
+    }
+
+    /* =====================
+       CONTACTO
+    ===================== */
+    #contacto {
+      background: #f2f2f2;
+      padding: 60px 0;
+    }
+
+    .contact-grid {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .contact-col {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .contact-col h3 {
+      font-size: 19px;
+      color: #333;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #7063FF;
+      padding-bottom: 10px;
+    }
+
+    .contact-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .contact-feature .icon {
+      font-size: 22px;
+      color: #7063FF;
+      margin-top: 2px;
+      min-width: 24px;
+    }
+
+    .contact-feature .info blockquote {
+      border-left: 1px solid #ddd;
+      margin: 0;
+      padding: 4px 12px;
+      color: #555;
+    }
+
+    .contact-feature .info blockquote span {
+      color: #999;
+      font-weight: 200;
+      display: block;
+      font-size: 13px;
+    }
+
+    .contact-feature .info blockquote strong {
+      font-size: 15px;
+      color: #333;
+    }
+
+    .contact-feature .info p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .contact-feature .info a { color: #7063FF; }
+
+    .divider-line {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 12px 0;
+    }
+
+    /* =====================
+       FOOTER
+    ===================== */
+    #sp-footer {
+      background: #363839;
+      color: #b0b0b0;
+      padding: 22px 0;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    #sp-footer a { color: #d6d6d6; }
+    #sp-footer a:hover { color: #f0f0f0; }
+
+    /* =====================
+       WHATSAPP FLOAT BUTTON
+    ===================== */
+    #whatsapp-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 1500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      padding: 14px 22px 14px 18px;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.2s;
+      animation: wa-pulse 2.5s ease-in-out infinite;
+    }
+
+    #whatsapp-btn:hover {
+      background: #1ebe5d;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(37,211,102,0.55);
+      animation: none;
+    }
+
+    #whatsapp-btn .wa-icon {
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+    }
+
+    #whatsapp-btn .wa-label {
+      white-space: nowrap;
+    }
+
+    @keyframes wa-pulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+      50%       { box-shadow: 0 4px 28px rgba(37,211,102,0.75); }
+    }
+
+    /* =====================
+       ANIMATIONS
+    ===================== */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =====================
+       RESPONSIVE
+    ===================== */
+    @media (max-width: 768px) {
+      body { padding-top: 80px; }
+
+      #sp-header { height: 70px; }
+      #sp-header.scrolled { height: 60px; }
+      .sp-logo img { height: 40px; }
+
+      .sp-megamenu-parent { display: none; }
+      #hamburger-btn { display: flex; }
+
+      .col-6, .col-4, .col-3 { width: 100%; }
+
+      .slide img { max-height: 260px; }
+
+      #whatsapp-btn .wa-label { display: none; }
+      #whatsapp-btn { padding: 16px; border-radius: 50%; }
+      #whatsapp-btn .wa-icon { font-size: 26px; }
+
+      .mobile-layout { flex-direction: column; }
+    }
+
+    @media (max-width: 480px) {
+      h3 { font-size: 22px; }
+      .sppb-section { padding: 40px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <img src="../images/logos/panacea_logo2020.png" alt="PANACEA">
+    <div class="preloader-bar"></div>
+  </div>
+
+  <!-- Off-canvas overlay -->
+  <div class="offcanvas-overlay" id="offcanvas-overlay"></div>
+
+  <!-- Off-canvas menu -->
+  <div id="offcanvas-menu" role="dialog" aria-label="Menú de navegación">
+    <button id="offcanvas-close" aria-label="Cerrar menú"><i class="fas fa-times"></i></button>
+    <ul>
+      <li><a href="#top" id="oc-inicio">Inicio</a></li>
+      <li><a href="#quienes_somos_titulo" id="oc-quienes">Quienes Somos</a></li>
+      <li><a href="#diferenciales" id="oc-diferenciales">Somos lo que hacemos</a></li>
+      <li><a href="#panacea_mobile" id="oc-mobile">Panacea Mobile</a></li>
+      <li><a href="https://e-panacea.com.ar" id="oc-shop" target="_blank" rel="noopener noreferrer">Shop</a></li>
+      <li><a href="#contacto" id="oc-contacto">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- Top bar -->
+  <div id="sp-top-bar">
+    <div class="container">
+      <div class="contact-info">
+        <i class="fas fa-clock"></i>
+        <span>Lu. a Vi. 8 a 20 hs. &nbsp;|&nbsp; Sa 9 a 13 hs.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="sp-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <div class="sp-logo">
+          <a href="#top" id="logo-link" aria-label="PANACEA – Inicio">
+            <img id="site-logo"
+                 src="../images/logos/panacea_logo2020.png"
+                 alt="PANACEA">
+          </a>
+        </div>
+
+        <nav id="sp-menu" role="navigation" aria-label="Navegación principal">
+          <ul class="sp-megamenu-parent">
+            <li class="active"><a href="#top" id="nav-inicio">Inicio</a></li>
+            <li><a href="#quienes_somos_titulo" id="nav-quienes">Quienes Somos</a></li>
+            <li><a href="#diferenciales" id="nav-diferenciales">Somos lo que hacemos</a></li>
+            <li><a href="#panacea_mobile" id="nav-mobile">Panacea Mobile</a></li>
+            <li><a href="https://e-panacea.com.ar" id="nav-shop" target="_blank" rel="noopener noreferrer">Shop</a></li>
+            <li><a href="#contacto" id="nav-contacto">Contacto</a></li>
+          </ul>
+          <button id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main id="top">
+
+    <!-- ===================== HERO SLIDER ===================== -->
+    <section id="fila_carousel" aria-label="Presentación">
+      <div id="hero-slider">
+        <div class="slider-track" id="slider-track">
+          <div class="slide">
+            <img src="../images/panacea_slider2/Slider4-01.png" alt="Panacea – Slide 1" loading="eager">
+          </div>
+          <div class="slide">
+            <img src="../images/panacea_slider2/slider6-01.png" alt="Panacea – Slide 2" loading="lazy">
+          </div>
+          <div class="slide">
+            <img src="../images/panacea_slider2/Slider3-01.png" alt="Panacea – Slide 3" loading="lazy">
+          </div>
+          <div class="slide">
+            <img src="../images/panacea_slider2/slider5-01.png" alt="Panacea – Slide 4" loading="lazy">
+          </div>
+        </div>
+
+        <button class="slider-btn prev" id="slider-prev" aria-label="Slide anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-btn next" id="slider-next" aria-label="Siguiente slide">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="slider-dots" id="slider-dots" role="tablist" aria-label="Indicadores de slide">
+          <button class="slider-dot active" id="dot-0" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+          <button class="slider-dot" id="dot-1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+          <button class="slider-dot" id="dot-2" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+          <button class="slider-dot" id="dot-3" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== QUIENES SOMOS ===================== -->
+    <section id="quienes_somos_titulo" class="sppb-section">
+      <div class="container">
+
+        <div class="section-title fade-in-up">
+          <h3><em>Quienes Somos</em></h3>
+        </div>
+
+        <div class="quienes-text fade-in-up">
+          <p>
+            <strong>Panacea es la compañía líder en comercialización y distribución de productos específicos del canal veterinario en Argentina.</strong><br><br>
+            Con más de 30 años de trayectoria, se ha consolidado como un actor fundamental del sector, a partir de un profundo conocimiento del mercado, una articulación eficiente y transparente entre las principales marcas y los profesionales de todo el país, y la implementación de soluciones que favorezcan la práctica profesional y contribuyan a su desarrollo.
+          </p>
+        </div>
+
+        <!-- Misión / Visión -->
+        <div class="feature-boxes fade-in-up">
+          <div class="feature-box">
+            <div class="icon"><i class="fas fa-gem"></i></div>
+            <h3>Misión</h3>
+            <p>Favorecer el desarrollo de la medicina veterinaria en Argentina a través del fortalecimiento de los vínculos en la comunidad, el respaldo constante a cada uno de sus actores, la promoción de las buenas prácticas profesionales y el aporte de soluciones integrales que comprendan los mejores productos y servicios.</p>
+          </div>
+          <div class="feature-box">
+            <div class="icon"><i class="fas fa-sync-alt"></i></div>
+            <h3>Visión</h3>
+            <p>Consolidar nuestro liderazgo en el mercado veterinario argentino, a través del aporte de soluciones innovadoras e integrales para la comunidad, que promuevan la mejora continua de la profesión veterinaria y, en consecuencia, el bienestar humano y animal.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== DIFERENCIALES ===================== -->
+    <section id="diferenciales">
+      <div class="container">
+
+        <div class="section-title fade-in-up">
+          <h3><em>Somos lo que hacemos</em></h3>
+        </div>
+
+        <div class="diferencial-grid">
+          <div class="diferencial-card fade-in-up">
+            <h3>Somos protagonistas de la comunidad veterinaria</h3>
+            <p>Desde hace más de 30 años somos partícipes fundamentales de la comunidad veterinaria argentina, la cual conocemos como nadie. Como líderes, asumimos el compromiso de impulsar el desarrollo de dicha comunidad, a partir de la detección e incorporación de soluciones innovadoras que favorezcan efectivamente la práctica de la profesión y la labor diaria en cada clínica veterinaria.</p>
+          </div>
+          <div class="diferencial-card fade-in-up">
+            <h3>Somos referentes de buenas prácticas</h3>
+            <p>Nuestro rol como nexo entre las marcas y las clínicas veterinarias trasciende lo operativo: Somos, a la vez, portavoces de nuestros clientes y socios comerciales, y ejercemos este rol con responsabilidad y un alto sentido de la ética. Entendemos que la profesionalización de la práctica enaltece la medicina veterinaria y promueve su crecimiento.</p>
+          </div>
+          <div class="diferencial-card fade-in-up">
+            <h3>Estamos cerca</h3>
+            <p>El factor humano y el respaldo a quienes integran nuestra comunidad son esenciales a nuestra labor diaria. Construimos vínculos valiosos y duraderos, basados en el diálogo, la empatía y el respeto. Trabajamos para mejorar la experiencia de personas reales frente a problemáticas y desafíos específicos, para lo cual desarrollamos soluciones a medida a partir de la identificación de las necesidades y oportunidades de cada caso.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== PANACEA MOBILE ===================== -->
+    <section id="panacea_mobile" class="sppb-section">
+      <div class="container">
+
+        <div class="section-title fade-in-up">
+          <h3><em>Panacea Mobile</em></h3>
+        </div>
+
+        <div class="mobile-layout">
+          <div class="mobile-img fade-in-up">
+            <a href="https://play.google.com/store/apps/details?id=ar.com.gc_sistemas.crmcloud_cliente_panacea"
+               target="_blank" rel="noopener noreferrer" id="mobile-img-link">
+              <img src="../images/2020/07/24/panacea_mobile.png" alt="PANACEA MOBILE App">
+            </a>
+          </div>
+          <div class="mobile-content fade-in-up">
+            <h3><strong>PANACEA MOBILE</strong></h3>
+            <div class="store-badges">
+              <a href="https://play.google.com/store/apps/details?id=ar.com.gc_sistemas.crmcloud_cliente_panacea"
+                 target="_blank" rel="noopener noreferrer" id="google-play-link">
+                <img src="../images/logos/google-play-badge.png" alt="Disponible en Google Play" width="200">
+              </a>
+              <a href="https://apps.apple.com/ar/app/panacea-mob/id1618981626"
+                 target="_blank" rel="noopener noreferrer" id="apple-store-link">
+                <img src="../images/logos/apple_store.png" alt="Descarga en App Store" width="180">
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== CONTACTO ===================== -->
+    <section id="contacto">
+      <div class="container">
+
+        <div class="section-title fade-in-up">
+          <h3><em>Contacto</em></h3>
+        </div>
+
+        <div class="contact-grid">
+
+          <!-- Horario -->
+          <div class="contact-col fade-in-up">
+            <h3>Horario de Atención</h3>
+            <p style="color:#666; font-size:14px; margin-bottom:16px;">Horario de Atención Comercial</p>
+            <hr class="divider-line">
+
+            <div class="contact-feature">
+              <div class="icon"><i class="fas fa-sun"></i></div>
+              <div class="info">
+                <blockquote>
+                  <span>LUNES – VIERNES</span>
+                  <strong>08:00 – 20:00</strong>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="contact-feature">
+              <div class="icon"><i class="fas fa-sun"></i></div>
+              <div class="info">
+                <blockquote>
+                  <span>SÁBADOS</span>
+                  <strong>9:00 – 13:00</strong>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spacer col (empty in original) -->
+          <div class="contact-col fade-in-up" style="flex:0 0 0; min-width:0; padding:0;"></div>
+
+          <!-- Datos de contacto -->
+          <div class="contact-col fade-in-up">
+            <h3>Contáctenos</h3>
+
+            <div class="contact-feature">
+              <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="info">
+                <p>PANACEA, Parque Industrial Tigre.<br>
+                  Austria 796, Troncos del Talar (B1608EBP)<br>
+                  Partido de Tigre, Pcia. de Buenos Aires, Argentina</p>
+              </div>
+            </div>
+
+            <div class="contact-feature">
+              <div class="icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="info">
+                <p>
+                  Llámanos ahora: <strong>(5411) 4715-8400</strong><br>
+                  Teléfonos Gratuitos:<br>
+                  <strong>0810-777-2600</strong> para Capital y Gran Bs. As.<br>
+                  <strong>0810-777-8383</strong> para Interior.
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-feature">
+              <div class="icon"><i class="fas fa-envelope"></i></div>
+              <div class="info">
+                <p>Email:<br>
+                  <a href="mailto:info@panacea.com.ar" id="contact-email">info@panacea.com.ar</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="sp-footer" role="contentinfo">
+    <div class="container">
+      <span class="sp-copyright">
+        &copy; 2026 Panacea. Todos los derechos reservados. Diseñado por
+        <a href="https://www.gc-sistemas.com.ar" target="_blank" rel="noopener noreferrer" id="footer-designer">GC &amp; Asoc. Sistemas</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- ===================== WHATSAPP FLOATING BUTTON ===================== -->
+  <a id="whatsapp-btn"
+     href="https://wa.me/5491147158400"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp">
+    <span class="wa-icon"><i class="fab fa-whatsapp"></i></span>
+    <span class="wa-label">Contactar por WhatsApp</span>
+  </a>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    // ---- Preloader ----
+    window.addEventListener('load', function () {
+      var pre = document.getElementById('preloader');
+      setTimeout(function () { pre.classList.add('hidden'); }, 600);
+    });
+
+    // ---- Sticky header ----
+    var header = document.getElementById('sp-header');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 80) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    });
+
+    // ---- Hamburger / off-canvas ----
+    var hamburger = document.getElementById('hamburger-btn');
+    var offcanvas = document.getElementById('offcanvas-menu');
+    var overlay   = document.getElementById('offcanvas-overlay');
+    var closeBtn  = document.getElementById('offcanvas-close');
+
+    function openMenu() {
+      offcanvas.classList.add('open');
+      overlay.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      offcanvas.classList.remove('open');
+      overlay.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    // Close off-canvas on anchor click
+    offcanvas.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+
+    // ---- Hero Slider ----
+    var track   = document.getElementById('slider-track');
+    var dots    = document.querySelectorAll('.slider-dot');
+    var total   = dots.length;
+    var current = 0;
+    var timer;
+
+    function goTo(n) {
+      current = (n + total) % total;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach(function (d, i) {
+        d.classList.toggle('active', i === current);
+        d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+      });
+    }
+
+    function startAuto() {
+      timer = setInterval(function () { goTo(current + 1); }, 5000);
+    }
+
+    function resetAuto() {
+      clearInterval(timer);
+      startAuto();
+    }
+
+    document.getElementById('slider-prev').addEventListener('click', function () { goTo(current - 1); resetAuto(); });
+    document.getElementById('slider-next').addEventListener('click', function () { goTo(current + 1); resetAuto(); });
+
+    dots.forEach(function (d, i) {
+      d.addEventListener('click', function () { goTo(i); resetAuto(); });
+    });
+
+    startAuto();
+
+    // ---- Fade-in-up on scroll ----
+    var fadeEls = document.querySelectorAll('.fade-in-up');
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    fadeEls.forEach(function (el) { observer.observe(el); });
+
+    // ---- Active nav link on scroll ----
+    var sections = ['top', 'quienes_somos_titulo', 'diferenciales', 'panacea_mobile', 'contacto'];
+    var navLinks = {
+      'top'                  : document.getElementById('nav-inicio'),
+      'quienes_somos_titulo' : document.getElementById('nav-quienes'),
+      'diferenciales'        : document.getElementById('nav-diferenciales'),
+      'panacea_mobile'       : document.getElementById('nav-mobile'),
+      'contacto'             : document.getElementById('nav-contacto')
+    };
+
+    function updateActiveNav() {
+      var scrollPos = window.scrollY + 120;
+      var active = 'top';
+      sections.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollPos) active = id;
+      });
+      Object.keys(navLinks).forEach(function (id) {
+        if (navLinks[id]) navLinks[id].closest('li').classList.remove('active');
+      });
+      if (navLinks[active]) navLinks[active].closest('li').classList.add('active');
+    }
+
+    window.addEventListener('scroll', updateActiveNav);
+  </script>
+
+</body>
+</html>
