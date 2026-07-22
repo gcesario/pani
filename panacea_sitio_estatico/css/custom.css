@@ -1,0 +1,6 @@
+/* Alineación del menú en versión móvil */
+@media (max-width: 768px) {
+    #sp-header .header-inner {
+        width: 100%;
+    }
+}
